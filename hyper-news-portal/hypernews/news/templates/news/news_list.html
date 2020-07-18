@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block body %}
+{{ block.super }}
+<h2>Hyper news</h2>
+<form action="/news/" method="get">
+    <label for="q_box">Search by title: </label>
+    <input id="q_box" name="q" type="text">
+    <button type="submit">Search</button>
+</form>
+{% for day in data %}
+<h4>{{ day.date }}</h4>
+<ul>
+    {% for news_item in day.news_items %}
+    <li>
+        <a href="/news/{{ news_item.link }}/">{{ news_item.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endfor %}
+<a href="/news/create/">Create</a>
+{% endblock %}

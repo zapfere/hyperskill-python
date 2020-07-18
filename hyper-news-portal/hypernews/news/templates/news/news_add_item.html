@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block body %}
+{{ block.super }}
+<form action="/news/create/" method="post">
+    {% csrf_token %}
+    <label for="title_box">Title: </label>
+    <input id="title_box" name="title" type="text">
+    <label for="text_box">Text: </label>
+    <input id="text_box" name="text" type="text">
+    <button type="submit">Save</button>
+</form>
+<br>
+<a href="/news/">Back</a>
+{% endblock %}

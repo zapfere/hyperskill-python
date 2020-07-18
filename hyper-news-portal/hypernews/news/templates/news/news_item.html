@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block body %}
+{{ block.super }}
+<h2>{{ news_obj.title }}</h2>
+<p>{{ news_obj.created }}</p>
+<p>{{ news_obj.text }}</p>
+<a href="/news/">Back</a>
+{% endblock %}
