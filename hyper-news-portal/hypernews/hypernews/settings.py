@@ -56,7 +56,7 @@ ROOT_URLCONF = 'hypernews.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['news/templates/news/'],
+        'DIRS': ['templates/', 'news/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

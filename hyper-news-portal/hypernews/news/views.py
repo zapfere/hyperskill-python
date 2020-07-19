@@ -22,14 +22,14 @@ class NewsListView(View):
     def get(self, request, *args, **kwargs):
 
         search_str = request.GET.get("q")
-        print(search_str)
+
         if search_str:
             data = filter_news_by_title(search_str, news_by_day)
         else:
             data = news_by_day
 
         context = {"data": data}
-        return render(request, "news_list.html", context=context)
+        return render(request, "news/news_list.html", context=context)
 
 
 class NewsItemView(View):
@@ -40,14 +40,14 @@ class NewsItemView(View):
             raise Http404
 
         context = {"news_obj": news_data[news_id]}
-        return render(request, "news_item.html", context=context)
+        return render(request, "news/news_item.html", context=context)
 
 
 class NewsAddView(View):
 
     def get(self, request, *args, **kwargs):
 
-        return render(request, "news_add_item.html")
+        return render(request, "news/news_add_item.html")
 
     def post(self, request, *args, **kwargs):
 
