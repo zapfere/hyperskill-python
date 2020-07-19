@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block body %}
+{{ block.super }}
+{% for key, value in items %}
+<a target="_blank" href="/get_ticket/{{ key }}">{{ value }}</a>
+<br>
+{% endfor %}
+{% endblock %}

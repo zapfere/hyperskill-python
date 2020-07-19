@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block body %}
+{{ block.super }}
+{% for queue in queues %}
+<div>{{ queue.name }}: {{ queue.count }}</div>
+{% endfor %}
+<form action="/processing" method="post">{% csrf_token %}
+  <button type="submit">Process next</button>
+</form>
+{% endblock %}
