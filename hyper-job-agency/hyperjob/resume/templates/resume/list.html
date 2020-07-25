@@ -1,0 +1,8 @@
+{% extends 'common/base.html' %}
+{% block body %}
+{{ block.super }}
+<h2>Resume list</h2>
+{% for resume in resumes %}
+<div>{{ resume.author.username }}: {{ resume.description }}</div>
+{% endfor %}
+{% endblock %}
