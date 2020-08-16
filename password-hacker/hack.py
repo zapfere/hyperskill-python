@@ -5,7 +5,7 @@ from typing import List
 from impl.guessers import BehavioralGuesser
 
 
-LOGIN_FILE_NAME = "/home/paul/PycharmProjects/Password Hacker/Password Hacker/task/hacking/logins.txt"
+LOGIN_FILE_NAME = "logins.txt"
 
 
 class WrongArgumentsError(Exception):
